@@ -47,12 +47,11 @@ AGENTS.md
 .vscode
 docs*
 playwright.config.js
-graphify-out/*
+graphify-out*
 
 # InstanFoto: secrets and generated data
 .env
 api/data/
-graphify-out/cache/
 .vercel
 uploader/queue.json
 uploader/uploader.log
