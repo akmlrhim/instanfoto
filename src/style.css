@@ -1,0 +1,91 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'DM Sans Variable', 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+
+  --color-canvas: #ffffff;
+  --color-surface: #f1f4f7;
+  --color-ink: #0a1317;
+  --color-ink-soft: #1c1e21;
+  --color-muted: #444950;
+  --color-hairline: #dee3e9;
+  --color-disabled-text: #bcc0c4;
+  --color-accent: #0064e0;
+  --color-accent-pressed: #0457cb;
+  --color-critical: #e41e3f;
+  --color-success: #31a24c;
+
+  --radius-photo: 32px;
+  --radius-card: 24px;
+  --radius-pill: 100px;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  ::selection {
+    background-color: #cfe2ff;
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .album-shell {
+    @apply mx-auto w-full max-w-[1280px] px-4 sm:px-6 lg:px-8;
+  }
+
+  .primary-button {
+    @apply inline-flex min-h-12 cursor-pointer items-center justify-center rounded-pill bg-ink px-7 py-3 text-sm font-bold text-white transition-[background-color,transform] duration-150 hover:bg-ink-soft active:translate-y-px disabled:cursor-not-allowed disabled:bg-disabled-text;
+  }
+
+  .download-button {
+    @apply inline-flex min-h-12 cursor-pointer items-center justify-center gap-2 rounded-pill bg-accent px-6 py-3 text-sm font-bold text-white transition-[background-color,transform] duration-150 hover:bg-accent-pressed active:translate-y-px;
+  }
+
+  .quiet-button {
+    @apply inline-flex min-h-11 cursor-pointer items-center justify-center gap-2 rounded-pill border-2 border-ink bg-transparent px-6 py-3 text-sm font-bold text-ink transition-[background-color,transform] duration-150 hover:bg-surface active:translate-y-px disabled:cursor-not-allowed disabled:border-disabled-text disabled:text-disabled-text;
+  }
+
+  .icon-button {
+    @apply inline-grid h-12 w-12 shrink-0 cursor-pointer place-items-center rounded-full border border-hairline bg-canvas text-ink transition-colors duration-150 hover:bg-surface active:translate-y-px disabled:cursor-not-allowed disabled:text-disabled-text;
+  }
+
+  .state-card {
+    @apply rounded-card border border-hairline bg-surface p-6 sm:p-8;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
