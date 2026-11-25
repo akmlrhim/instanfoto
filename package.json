@@ -1,0 +1,46 @@
+{
+  "name": "instanfoto",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "api": "php -S 127.0.0.1:8000 -t api/public api/public/router.php",
+    "cleanup": "php api/bin/cleanup.php",
+    "check-env": "php api/bin/check-env.php",
+    "test:unit": "vitest",
+    "test:e2e": "playwright test",
+    "test:api": "php api/tests/smoke.php",
+    "format": "prettier --write --experimental-cli src/ uploader/ demo/"
+  },
+  "dependencies": {
+    "@fontsource-variable/dm-sans": "^5.3.0",
+    "@tailwindcss/vite": "^4.3.5",
+    "@vue/devtools-api": "^8.2.1",
+    "axios": "^1.21.1",
+    "chokidar": "^6.0.0",
+    "express": "^5.3.0",
+    "form-data": "^4.0.6",
+    "pinia": "^4.0.3",
+    "qrcode": "^1.5.4",
+    "sharp": "^0.35.5",
+    "tailwindcss": "^4.3.5",
+    "vue": "^3.5.42",
+    "vue-router": "^5.5.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@vitejs/plugin-vue": "^6.0.8",
+    "@vue/test-utils": "^2.5.0",
+    "jsdom": "^30.0.1",
+    "prettier": "3.9.6",
+    "vite": "^8.2.2",
+    "vite-plugin-vue-devtools": "^8.2.1",
+    "vitest": "^4.1.11"
+  },
+  "engines": {
+    "node": "^22.18.0 || >=24.12.0"
+  }
+}
